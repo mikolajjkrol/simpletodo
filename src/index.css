@@ -101,7 +101,7 @@ h3 {
   gap: 20px;
 } .modal-content input {
   box-sizing: border-box;
-  padding: 10px;
+  padding: 14px;
   font-size: 20px;
   border: 1px solid rgb(70, 70, 70);
   background-color: black;
@@ -122,10 +122,10 @@ h3 {
 .buttons {
   display: flex;
   width: 100%;
-  gap: 10px;
+  gap: 20px;
 } .buttons button {
   width: 50%;
-  padding: 5px;
+  padding: 10px;
   background-color: black;
   border: 1px solid rgb(70, 70, 70);
 } .buttons button svg {
