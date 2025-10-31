@@ -4,7 +4,7 @@ body {
   background-color: black;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 100%;
   font-family: "Bricolage Grotesque", sans-serif;
   color: white;
   padding: 0;
@@ -12,15 +12,19 @@ body {
   font-size: 1.1rem;
 } input{
   font-family: "Bricolage Grotesque", sans-serif;
+} button {
+  font-family: "Bricolage Grotesque", sans-serif;
 }
 
 .tasks {
-  height: 90dvh;
+  margin-top: 20px;
+  height: calc(90dvh - 30px);
   width: calc(100% - 10px);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   gap: 10px;
   scrollbar-width: thin;
   scrollbar-color: rgb(34, 34, 34) transparent;
@@ -47,12 +51,13 @@ h3 {
   color: black;
   font-size: 1.5rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: sans-serif;
+  position: relative;
 } .task {
   border-bottom: 1px solid white;
   padding: 2rem;
@@ -60,7 +65,12 @@ h3 {
   flex-direction: column;
   justify-content: flex-start;
   gap: 5px;
-} .task h3 {
+  width: 60%;
+  position: relative;
+  transition: 0.1s;
+  cursor: pointer;
+}
+.task h3 {
   margin: 0;
   margin-bottom: 0.5rem;
 } .task p {
@@ -137,21 +147,120 @@ h3 {
 }
 .completed {
   color: rgb(32, 124, 63);
+} .loading {
+  position: absolute;
+  width: 100%;
+  height: 80dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+.logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  cursor: pointer;
 }
 
 .delete {
   position: absolute;
-  top: 0;
+  bottom: 0;
+  margin-bottom: 28px;
   right: 0;
   cursor: pointer;
-  height: 100%;
   padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .delete svg {
-  width: 30px;
-  height: 30px;
-  fill: red;
+  width: 20px;
+  height: 20px;
+  fill: rgb(126, 21, 21);
+}
+
+.welcomepage {
+  height: 84dvh;
+  width: calc(100% - 10px);
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.welcomepage a, .welcomepage input, .welcomepage button {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(175, 175, 175);
+  background-color: black;
+  border: 1px solid rgb(175, 175, 175);
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+} 
+
+.welcomepage a:hover, .welcomepage button:hover {
+  transform: translateY(-1px);
+  border-color: white;
+  color: white;
+}
+
+.welcomepage .last-child {
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.welcomepage .last-child:hover {
+  background-color: #e3e3e3;
+  color: black;
+}
+
+.welcomepage p {
+  font-size: 100px;
+  height: 50px;
+} a.diff {
+  font-size: 15px;
+  border: none;
+  display: flex;
+  align-items: flex-end;
+  height: 10px;
+}
+
+@media (max-width: 600px) {
+  .welcomepage {
+    gap: 10px;
+    padding: 15px;
+    height: 94dvh;
+  }
+  .welcomepage p {
+    font-size: 60px;
+    height: 20px;
+  }
+  a.diff {
+    font-size: 13px !important;
+    height: 10px;
+  }
+  .welcomepage a, .welcomepage input, .welcomepage button  {
+    padding: 12px;
+    font-size: 1.1rem;
+    width: 90%;
+  } .task {
+    width: calc(80%);
+  }
 }
